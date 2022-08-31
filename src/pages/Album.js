@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class Album extends React.Component {
@@ -27,8 +27,6 @@ class Album extends React.Component {
 
     this.setState({ loading: true });
     const favorites = await getFavoriteSongs();
-    // const songs = favorites.map((song) => song);
-    // console.log(favorites);
     this.setState({ loading: false, getFavorites: favorites });
   }
 
@@ -44,11 +42,20 @@ class Album extends React.Component {
   };
 
   handleChange = async (event) => {
-    const { target: { id } } = event;
+    const { getFavorites } = this.state;
+    console.log(getFavorites);
+    const { target: { id, checked } } = event;
     this.setState({ loading: true });
     const music = await getMusics(id);
-    await addSong(music[0]);
-    this.setState((prev) => ({ favorites: [...prev.favorites, id], loading: false }));
+    if (!checked) {
+      await removeSong(music[0]);
+      this.setState((prev) => ({ favorites: prev.favorites.filter((f) => f !== id),
+        loading: false,
+        getFavorites: prev.getFavorites.filter((f) => f.trackId.toString() !== id) }));
+    } else {
+      await addSong(music[0]);
+      this.setState((prev) => ({ favorites: [...prev.favorites, id], loading: false }));
+    }
   };
 
   render() {
