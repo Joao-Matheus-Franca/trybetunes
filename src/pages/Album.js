@@ -27,8 +27,9 @@ class Album extends React.Component {
 
     this.setState({ loading: true });
     const favorites = await getFavoriteSongs();
-    const songs = favorites.map((song) => song[0]);
-    this.setState({ loading: false, getFavorites: songs });
+    // const songs = favorites.map((song) => song);
+    // console.log(favorites);
+    this.setState({ loading: false, getFavorites: favorites });
   }
 
   getId = () => {
@@ -46,7 +47,7 @@ class Album extends React.Component {
     const { target: { id } } = event;
     this.setState({ loading: true });
     const music = await getMusics(id);
-    await addSong(music);
+    await addSong(music[0]);
     this.setState((prev) => ({ favorites: [...prev.favorites, id], loading: false }));
   };
 
