@@ -15,8 +15,8 @@
 > <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height=40 alt="Github icon"/>
 > <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height=40 alt="React icon"/>
 ## 🧠 Desafios e aprendizados:
-* Avançar no uso da biblioteca <a href="https://react.dev/">React</a> ao compreender e utilizar os ciclos de vida dos componentes para construção de uma aplicação capaz de lidar com assincronicidade das requisições Web
 * Aprender o uso de rotas personalizadas para criar aplicações mais complexas através do <a href="https://reactrouter.com/en/main">React Router</a>
+* Avançar no uso da biblioteca <a href="https://react.dev/">React</a> ao compreender e utilizar os ciclos de vida dos componentes para construção de uma aplicação capaz de lidar com assincronicidade das requisições Web
 ## 👨‍💻 Como executar: 
 ⚠️ Recomenda-se o download e utilização do Visual Studio Code e NodeJS ⚠️
 1. Realizar o clone do repositório: ``` git clone git@github.com:Joao-Matheus-Franca/trybetunes.git ```
