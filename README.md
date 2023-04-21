@@ -5,17 +5,17 @@
 * As funções da pasta ``` service ``` foram disponibilizadas pela
 <a href="https://www.betrybe.com/">Trybe</a>
 ## 🎯 Objetivos: 
-* Aplicar o versionamento de códigos com o uso dos princípios do Git e GitHub
-* Progredir nos ensinamentos sobre o uso do <a href="https://react.dev/">React</a> para construção de aplicações Web 
-* Aprimorar o fluxo das aplicações com a contrução de ``` rotas ``` personalizadas
-* Lidar com os ciclos de vida do <a href="https://react.dev/">React</a> na componentização da aplicação
-* Consumir dados externos através da <a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a> lidando com a assincronicidade das requisições
+* Criar uma aplicação Web para reprodução de demos musicais através da
+<a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a>
 ## 🖥️ Tecnologias:
 > <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height=40 alt="Git icon"/>
 > <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height=40 alt="Github icon"/>
 > <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height=40 alt="React icon"/>
 ## 🧠 Desafios e aprendizados:
-* Aprender o uso de rotas personalizadas para criar aplicações mais complexas através do <a href="https://reactrouter.com/en/main">React Router</a>
+* Aplicar o versionamento de códigos com o uso dos princípios do Git e GitHub
+* Progredir nos ensinamentos sobre o uso do <a href="https://react.dev/">React</a> para construção de aplicações Web 
+* Aprimorar o fluxo das aplicações com a contrução de ``` rotas ``` personalizadas para criar aplicações mais complexas através do <a href="https://reactrouter.com/en/main">React Router</a>
+* Consumir dados externos através da <a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a> lidando com a assincronicidade das requisições
 * Avançar no uso da biblioteca <a href="https://react.dev/">React</a> ao compreender e utilizar os ciclos de vida dos componentes para construção de uma aplicação capaz de lidar com assincronicidade das requisições Web
 ## 👨‍💻 Como executar: 
 ⚠️ Recomenda-se o download e utilização do Visual Studio Code e NodeJS ⚠️
