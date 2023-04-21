@@ -14,7 +14,8 @@
 ## 🧠 Desafios e aprendizados:
 * Aplicar o versionamento de códigos com o uso dos princípios do Git e GitHub
 * Progredir nos ensinamentos sobre o uso do <a href="https://react.dev/">React</a> para construção de aplicações Web 
-* Aprimorar o fluxo das aplicações com a contrução de ``` rotas ``` personalizadas para criar aplicações mais complexas através do <a href="https://reactrouter.com/en/main">React Router</a>
+* Aprimorar o fluxo das aplicações com a contrução de ``` rotas ``` personalizadas para criar aplicações mais complexas através do 
+<a href="https://reactrouter.com/en/main">React Router</a>
 * Consumir dados externos através da <a href="https://developer.apple.com/documentation/applemusicapi">Apple Music API</a> lidando com a assincronicidade das requisições
 * Avançar no uso da biblioteca <a href="https://react.dev/">React</a> ao compreender e utilizar os ciclos de vida dos componentes para construção de uma aplicação capaz de lidar com assincronicidade das requisições Web
 ## 👨‍💻 Como executar: 
