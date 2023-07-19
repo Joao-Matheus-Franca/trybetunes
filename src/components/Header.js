@@ -6,28 +6,27 @@ import Loading from '../pages/Loading';
 class Header extends React.Component {
   state = {
     user: '',
-    loading: false,
+    isLoading: true,
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
-    const name = await getUser();
-    this.setState({ user: name.name, loading: false });
+    const userData = await getUser();
+    this.setState({ user: userData.name, isLoading: false });
   }
 
   render() {
-    const { user, loading } = this.state;
+    const { user, isLoading } = this.state;
     return (
-      loading ? <Loading />
+      isLoading ? <Loading />
         : (
-          <header data-testid="header-component">
+          <header>
             <h1>TybeTunes</h1>
             <nav>
-              <Link data-testid="link-to-search" to="/search">Search</Link>
-              <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
-              <Link data-testid="link-to-profile" to="/profile">Profile</Link>
+              <Link to="/search">Buscar</Link>
+              <Link to="/favorites">Favoritos</Link>
+              <Link to="/profile">Perfil</Link>
             </nav>
-            <p data-testid="header-user-name">{ user }</p>
+            <p>{ user }</p>
           </header>)
     );
   }
