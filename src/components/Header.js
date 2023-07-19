@@ -22,7 +22,7 @@ class Header extends React.Component {
           <header>
             <h1>TybeTunes</h1>
             <nav>
-              <Link to="/search">Buscar</Link>
+              <Link to="/search">Pesquisar</Link>
               <Link to="/favorites">Favoritos</Link>
               <Link to="/profile">Perfil</Link>
             </nav>

@@ -12,19 +12,18 @@ class Search extends React.Component {
     lastSearch: '',
   };
 
-  handleChange = (event) => {
-    const { target: { value } } = event;
-    this.setState({ search: value }, () => this.validateSearch());
-  };
-
   validateSearch = () => {
     const { search } = this.state;
-    const minLenght = 2;
-    if (search.length >= minLenght) {
+    const minSearchSize = 2;
+    if (search.length >= minSearchSize) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
     }
+  };
+
+  handleChange = ({ target: { value } }) => {
+    this.setState({ search: value }, () => this.validateSearch());
   };
 
   handleClick = async () => {
@@ -44,17 +43,15 @@ class Search extends React.Component {
     const { isDisabled, loading, search, hasSearch, lastSearch, albuns } = this.state;
     return (loading ? <Loading />
       : (
-        <div data-testid="page-search">
-          <h1>Search</h1>
+        <div>
+          <h2>Pesquisar</h2>
           <form>
             <input
-              data-testid="search-artist-input"
               type="text"
               value={ search }
               onChange={ this.handleChange }
             />
             <button
-              data-testid="search-artist-button"
               type="button"
               disabled={ isDisabled }
               onClick={ this.handleClick }
@@ -64,7 +61,7 @@ class Search extends React.Component {
           </form>
           {hasSearch
           && (
-            <>
+            <div>
               <p>
                 Resultado de álbuns de:
                 {' '}
@@ -74,7 +71,6 @@ class Search extends React.Component {
                 {albuns.length === 0 ? <p>Nenhum álbum foi encontrado</p>
                   : albuns.map((album) => (
                     <Link
-                      data-testid={ `link-to-album-${album.collectionId}` }
                       to={ `/album/${album.collectionId}` }
                       key={ album.collectionId }
                     >
@@ -86,7 +82,7 @@ class Search extends React.Component {
                       <li>{album.artistName}</li>
                     </Link>))}
               </ul>
-            </>)}
+            </div>)}
         </div>)
     );
   }
