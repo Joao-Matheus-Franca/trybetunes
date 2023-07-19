@@ -7,48 +7,47 @@ class Login extends React.Component {
   state = {
     name: '',
     btnDisabled: true,
-    loading: false,
+    isLoading: false,
     redirect: false,
-  };
-
-  handleChange = ({ target: { value } }) => {
-    this.setState({ name: value }, () => this.activateBtn());
   };
 
   activateBtn = () => {
     const { name } = this.state;
-    const minLength = 3;
-    if (name.length >= minLength) {
+    const minNameSize = 3;
+    if (name.length >= minNameSize) {
       this.setState({ btnDisabled: false });
     } else {
       this.setState({ btnDisabled: true });
     }
   };
 
+  handleChange = ({ target: { value } }) => {
+    this.setState({ name: value }, () => this.activateBtn());
+  };
+
   handleClick = async () => {
     const { name } = this.state;
-    this.setState({ loading: true });
+    this.setState({ isLoading: true });
     await createUser({ name });
     this.setState({ redirect: true });
   };
 
   render() {
-    const { btnDisabled, loading, redirect } = this.state;
+    const { btnDisabled, isLoading, redirect } = this.state;
     return (
       <Route exact path="/">
-        {loading ? <Loading /> : (
-          <div data-testid="page-login">
+        {isLoading ? <Loading /> : (
+          <div>
             <h1>Login</h1>
-            <label htmlFor="loginInput">
+            <label htmlFor="name_login_input">
               <input
-                data-testid="login-name-input"
+                id="name_login_input"
                 type="text"
                 onChange={ this.handleChange }
               />
             </label>
             <button
               type="button"
-              data-testid="login-submit-button"
               disabled={ btnDisabled }
               onClick={ this.handleClick }
             >
