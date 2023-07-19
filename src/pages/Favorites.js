@@ -11,12 +11,11 @@ class Favorites extends React.Component {
 
   async componentDidMount() {
     this.setState({ loading: true });
-    const musics = await getFavoriteSongs();
-    this.setState({ loading: false, favorites: musics });
+    const favorites = await getFavoriteSongs();
+    this.setState({ loading: false, favorites });
   }
 
-  handleChange = async (event) => {
-    const { target: { id } } = event;
+  handleChange = async ({ target: { id } }) => {
     const { favorites } = this.state;
     const song = favorites.find((s) => s.trackId.toString() === id);
     this.setState({ loading: true });
