@@ -21,7 +21,7 @@ class Header extends React.Component {
       loading ? <Loading />
         : (
           <header data-testid="header-component">
-            <h1>TybeTune</h1>
+            <h1>TybeTunes</h1>
             <nav>
               <Link data-testid="link-to-search" to="/search">Search</Link>
               <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
