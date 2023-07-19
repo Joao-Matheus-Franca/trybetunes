@@ -17,13 +17,14 @@ class Album extends React.Component {
   };
 
   async componentDidMount() {
-    const info = await this.getSongs();
-    const infos = await info[0];
-    const musics = await info.filter((_e, i) => i > 0);
+    const albumInfos = await this.getSongs();
+    const artistInfos = await albumInfos[0];
+    const musicsInfos = await albumInfos.filter((_m, i) => i > 0);
+
     this.setState({
-      artist: infos.artistName,
-      album: infos.collectionName,
-      musics });
+      artist: artistInfos.artistName,
+      album: artistInfos.collectionName,
+      musics: musicsInfos });
 
     this.setState({ loading: true });
     const favorites = await getFavoriteSongs();
@@ -32,8 +33,8 @@ class Album extends React.Component {
 
   getId = () => {
     const { match: { params: { id } } } = this.props;
-    const ids = id;
-    return ids;
+    const value = id;
+    return value;
   };
 
   getSongs = async () => {
@@ -41,19 +42,17 @@ class Album extends React.Component {
     return data;
   };
 
-  handleChange = async (event) => {
-    const { getFavorites } = this.state;
-    console.log(getFavorites);
-    const { target: { id, checked } } = event;
+  handleChange = async ({ target: { id, checked } }) => {
     this.setState({ loading: true });
     const music = await getMusics(id);
     if (!checked) {
-      await removeSong(music[0]);
-      this.setState((prev) => ({ favorites: prev.favorites.filter((f) => f !== id),
+      await removeSong(...music);
+      this.setState((prev) => ({
         loading: false,
+        favorites: prev.favorites.filter((f) => f !== id),
         getFavorites: prev.getFavorites.filter((f) => f.trackId.toString() !== id) }));
     } else {
-      await addSong(music[0]);
+      await addSong(...music);
       this.setState((prev) => ({ favorites: [...prev.favorites, id], loading: false }));
     }
   };
@@ -64,10 +63,9 @@ class Album extends React.Component {
       <>
         <Header />
         {loading ? <Loading /> : (
-          <div data-testid="page-album">
-            <h1>Album</h1>
-            <h2 data-testid="album-name">{album}</h2>
-            <h3 data-testid="artist-name">{artist}</h3>
+          <div>
+            <h2>{album}</h2>
+            <h3>{artist}</h3>
             {musics.map((music) => (
               <MusicCard
                 key={ music.trackName }
@@ -75,7 +73,7 @@ class Album extends React.Component {
                 previewUrl={ music.previewUrl }
                 trackId={ music.trackId }
                 onChange={ this.handleChange }
-                checked={ (getFavorites[0] !== undefined)
+                checked={ (getFavorites.length)
                   ? (getFavorites.some((e) => e.trackId === music.trackId)
                   || favorites.includes(music.trackId.toString()))
                   : favorites.includes(music.trackId.toString()) }
