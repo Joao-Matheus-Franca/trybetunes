@@ -11,8 +11,7 @@ class Login extends React.Component {
     redirect: false,
   };
 
-  handleChange = (event) => {
-    const { target: { value } } = event;
+  handleChange = ({ target: { value } }) => {
     this.setState({ name: value }, () => this.activateBtn());
   };
 
