@@ -27,7 +27,7 @@ class Favorites extends React.Component {
   render() {
     const { favorites, loading } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div>
         <h1>Favorites</h1>
         {loading ? <Loading /> : favorites.map((music) => (
           <MusicCard
