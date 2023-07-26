@@ -45,16 +45,17 @@ class Login extends React.Component {
               alt="Ícone da página"
             />
             <h1 id="title-login">TrybeTunes</h1>
-            <form>
+            <form id="form-login">
               <label htmlFor="name-login-input">
                 <input
                   id="name-login-input"
                   type="text"
-                  placeholder="Digitar nome"
+                  placeholder="Nome de usuário"
                   onChange={ this.handleChange }
                 />
               </label>
               <button
+                id="button-login"
                 type="button"
                 disabled={ btnDisabled }
                 onClick={ this.handleClick }

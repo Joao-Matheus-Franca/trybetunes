@@ -18,3 +18,12 @@ h1 {
 #image-login {
 	width: 65px;
 }
+
+#form-login {
+	display: flex;
+	flex-direction: column;
+}
+
+#button-login {
+	margin-top: 5px;
+}
