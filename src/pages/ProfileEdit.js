@@ -53,12 +53,11 @@ class ProfileEdit extends React.Component {
     return (
       <Route path="/profile/edit">
         { loading ? <Loading /> : (
-          <div data-testid="page-profile-edit">
+          <div>
             <h1>Profile Edit</h1>
             <label htmlFor="name">
               Nome:
               <input
-                data-testid="edit-input-name"
                 id="name"
                 value={ name }
                 onChange={ this.handleChange }
@@ -68,7 +67,6 @@ class ProfileEdit extends React.Component {
             <label htmlFor="email">
               E-mail:
               <input
-                data-testid="edit-input-email"
                 id="email"
                 value={ email }
                 onChange={ this.handleChange }
@@ -78,7 +76,6 @@ class ProfileEdit extends React.Component {
             <label htmlFor="description">
               Descrição:
               <textarea
-                data-testid="edit-input-description"
                 id="description"
                 onChange={ this.handleChange }
                 value={ description }
@@ -87,14 +84,12 @@ class ProfileEdit extends React.Component {
             <label htmlFor="image">
               <input
                 id="image"
-                data-testid="edit-input-image"
                 value={ image }
                 onChange={ this.handleChange }
               />
             </label>
             <button
               type="button"
-              data-testid="edit-button-save"
               disabled={ btnDisabled }
               onClick={ this.handleClick }
             >
