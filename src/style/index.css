@@ -15,7 +15,8 @@ body {
 
 #root {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -46,4 +47,8 @@ button {
     border: 2px solid rgb(252, 163, 17);
     border-radius: 2px;
     font-weight: 500;
+}
+
+a {
+    font-family: 'Barlow Condensed', sans-serif;
 }

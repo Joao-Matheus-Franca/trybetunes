@@ -1,0 +1,44 @@
+#header {
+    width: 100vw;
+    background-color: rgb(20, 33, 61);
+}
+
+#title-image-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+#title-header {
+    display: flex;
+    height: 5vh;
+}
+
+#image-header {
+    width: 65px;
+    margin-right: 10px;
+}
+
+#navbar-header {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    height: 3vh;
+}
+
+.navbar-button-header {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    border-right: 2px solid rgb(252, 163, 17);
+    padding-right: 5px;
+    height: fit-content;
+}
+
+#user-name-header {
+    color: white;
+    margin: 0%;
+    font-size: 20px;
+    height: fit-content;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../style/header.css';
 
 class Header extends React.Component {
   state = {
@@ -19,14 +20,21 @@ class Header extends React.Component {
     return (
       isLoading ? <Loading />
         : (
-          <header>
-            <h1>TybeTunes</h1>
-            <nav>
-              <Link to="/search">Pesquisar</Link>
-              <Link to="/favorites">Favoritos</Link>
-              <Link to="/profile">Perfil</Link>
+          <header id="header">
+            <div id="title-image-header">
+              <h1 id="title-header">TybeTunes</h1>
+              <img
+                id="image-header"
+                src="https://www.svgrepo.com/show/486358/music.svg"
+                alt="Ícone da página"
+              />
+            </div>
+            <nav id="navbar-header">
+              <Link className="navbar-button-header" to="/search">Pesquisar</Link>
+              <Link className="navbar-button-header" to="/favorites">Favoritos</Link>
+              <Link className="navbar-button-header" to="/profile">Perfil</Link>
+              <p id="user-name-header">{ `Usuário: ${user}`}</p>
             </nav>
-            <p>{ user }</p>
           </header>)
     );
   }
