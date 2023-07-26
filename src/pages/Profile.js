@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 class Profile extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class Profile extends React.Component {
     const { loading, name, image, email, description } = this.state;
     const profile = (
       <>
-        <h1>Profile</h1>
+        <h2>Perfil</h2>
         <ul>
           <li>{name}</li>
           <img data-testid="profile-image" alt={ name } src={ image } />

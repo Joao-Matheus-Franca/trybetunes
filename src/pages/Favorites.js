@@ -1,7 +1,7 @@
 import React from 'react';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 class Favorites extends React.Component {
   state = {
@@ -28,7 +28,7 @@ class Favorites extends React.Component {
     const { favorites, loading } = this.state;
     return (
       <div>
-        <h1>Favorites</h1>
+        <h2>Favoritas</h2>
         {loading ? <Loading /> : favorites.map((music) => (
           <MusicCard
             key={ music.trackName }
