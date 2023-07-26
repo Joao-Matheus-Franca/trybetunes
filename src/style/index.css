@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;400&family=Borel&display=swap');
+
+html {
+    height: 100vh;
+    background-color: rgb(252, 163, 17);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Borel', cursive;
+}
+
+h2 {
+    font-family: 'Borel', cursive;
+}
+
+h3 {
+    font-family: 'Borel', cursive;
+}
+
+p {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+input {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+}
+
+button {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    background-color: rgb(252, 163, 17);
+    border: 2px solid rgb(252, 163, 17);
+    border-radius: 2px;
+    margin-left: 5px;
+    font-weight: 500;
+}

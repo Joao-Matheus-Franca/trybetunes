@@ -39,6 +39,11 @@ class Login extends React.Component {
       <Route exact path="/">
         {isLoading ? <Loading /> : (
           <div id="page-login">
+            <img
+              id="image-login"
+              src="https://www.svgrepo.com/show/486358/music.svg"
+              alt="Ícone da página"
+            />
             <h1 id="title-login">TrybeTunes</h1>
             <form>
               <label htmlFor="name-login-input">
