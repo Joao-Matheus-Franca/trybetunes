@@ -7,7 +7,7 @@ class MusicCard extends React.Component {
     return (
       <>
         <p>{ trackName }</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
+        <audio src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}
@@ -16,7 +16,6 @@ class MusicCard extends React.Component {
           .
         </audio>
         <label
-          data-testid={ `checkbox-music-${trackId}` }
           htmlFor={ trackId }
         >
           Favorita
