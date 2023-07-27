@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
+import '../style/search.css';
 
 class Search extends React.Component {
   state = {
@@ -43,22 +44,30 @@ class Search extends React.Component {
     const { isDisabled, loading, search, hasSearch, lastSearch, albuns } = this.state;
     return (loading ? <Loading />
       : (
-        <div>
-          <h2>Pesquisar</h2>
-          <form>
-            <input
-              type="text"
-              value={ search }
-              onChange={ this.handleChange }
-            />
-            <button
-              type="button"
-              disabled={ isDisabled }
-              onClick={ this.handleClick }
-            >
-              Pesquisar
-            </button>
-          </form>
+        <div id="main-search">
+          <div id="header-search">
+            <h2 id="title-search">Pesquisar</h2>
+            <form id="form-search">
+              <input
+                id="input-form-search"
+                type="text"
+                value={ search }
+                onChange={ this.handleChange }
+              />
+              <button
+                id="button-form-search"
+                type="button"
+                disabled={ isDisabled }
+                onClick={ this.handleClick }
+              >
+                <img
+                  id="image-button-form-search"
+                  src="https://www.svgrepo.com/show/532552/search-alt-2.svg"
+                  alt="Ícone de busca"
+                />
+              </button>
+            </form>
+          </div>
           {hasSearch
           && (
             <div>

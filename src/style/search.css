@@ -1,0 +1,35 @@
+#main-search {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#header-search {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title-search {
+    margin: 10px;
+    padding-top: 2px;
+}
+
+#form-search {
+    display: flex;
+    padding: 15px;
+}
+
+#input-form-search {
+    height: 20px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+#button-form-search {
+    height: 30px;
+}
+
+#image-button-form-search {
+    width: 20px;
+}
