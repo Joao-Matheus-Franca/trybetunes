@@ -70,20 +70,22 @@ class Search extends React.Component {
           </div>
           {hasSearch
           && (
-            <div>
-              <p>
+            <div id="result-search">
+              <p id="result-phrase">
                 Resultado de álbuns de:
                 {' '}
                 { lastSearch }
               </p>
-              <ul>
+              <ul id="result-list">
                 {albuns.length === 0 ? <p>Nenhum álbum foi encontrado</p>
                   : albuns.map((album) => (
                     <Link
+                      className="album-result"
                       to={ `/album/${album.collectionId}` }
                       key={ album.collectionId }
                     >
                       <img
+                        id="image-album-result"
                         alt={ album.collectionName }
                         src={ album.artworkUrl100 }
                       />

@@ -51,4 +51,11 @@ button {
 
 a {
     font-family: 'Barlow Condensed', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+    font-weight: 600;
 }

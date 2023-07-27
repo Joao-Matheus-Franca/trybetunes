@@ -2,6 +2,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    margin-top: 11vh;
 }
 
 #header-search {
@@ -12,6 +13,7 @@
 
 #title-search {
     margin: 10px;
+    margin-left: 15px;
     padding-top: 2px;
 }
 
@@ -22,8 +24,10 @@
 
 #input-form-search {
     height: 20px;
+    width: 34vw;
     border-radius: 10px;
     border: 3px solid black;
+    margin-right: 2px;
 }
 
 #button-form-search {
@@ -32,4 +36,39 @@
 
 #image-button-form-search {
     width: 20px;
+}
+
+#result-search {
+    display: flex;
+    flex-direction: column;
+}
+
+#result-phrase {
+    margin: 0px;
+    margin-left: 15px;
+}
+
+#result-list {
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.album-result {
+    border: 3px solid rgb(20, 33, 61);
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 3px;
+    width: 40vw;
+}
+
+#image-album-result {
+    border-radius: 5px;
 }
