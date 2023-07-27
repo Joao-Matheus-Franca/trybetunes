@@ -22,7 +22,7 @@ class Header extends React.Component {
         : (
           <header id="header">
             <div id="title-image-header">
-              <h1 id="title-header">TybeTunes</h1>
+              <h1 id="title-header">TrybeTunes</h1>
               <img
                 id="image-header"
                 src="https://www.svgrepo.com/show/486358/music.svg"
