@@ -59,3 +59,7 @@ li {
     list-style: none;
     font-weight: 600;
 }
+
+audio {
+    position: relative;
+}

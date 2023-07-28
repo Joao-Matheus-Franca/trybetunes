@@ -2,6 +2,7 @@
     width: 100vw;
     background-color: rgb(20, 33, 61);
     position: fixed;
+    z-index: 1;
 }
 
 #title-image-header {
