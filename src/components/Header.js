@@ -31,7 +31,7 @@ class Header extends React.Component {
             </div>
             <nav id="navbar-header">
               <Link className="navbar-button-header" to="/search">Pesquisar</Link>
-              <Link className="navbar-button-header" to="/favorites">Favoritos</Link>
+              <Link className="navbar-button-header" to="/favorites">Favoritas</Link>
               <Link className="navbar-button-header" to="/profile">Perfil</Link>
               <p id="user-name-header">{ `Usuário: ${user}`}</p>
             </nav>

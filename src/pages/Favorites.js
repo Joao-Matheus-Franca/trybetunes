@@ -2,6 +2,7 @@ import React from 'react';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
+import '../style/favorites.css';
 
 class Favorites extends React.Component {
   state = {
@@ -27,18 +28,19 @@ class Favorites extends React.Component {
   render() {
     const { favorites, loading } = this.state;
     return (
-      <div>
-        <h2>Favoritas</h2>
-        {loading ? <Loading /> : favorites.map((music) => (
-          <MusicCard
-            key={ music.trackName }
-            trackName={ music.trackName }
-            previewUrl={ music.previewUrl }
-            trackId={ music.trackId }
-            onChange={ this.handleChange }
-            checked={ favorites.some((song) => song.trackId === music.trackId) }
-          />))}
-
+      <div id="main-favorite">
+        <h2 id="title-favorites">Favoritas</h2>
+        <div id="favorites-results">
+          {loading ? <Loading /> : favorites.map((music) => (
+            <MusicCard
+              key={ music.trackName }
+              trackName={ music.trackName }
+              previewUrl={ music.previewUrl }
+              trackId={ music.trackId }
+              onChange={ this.handleChange }
+              checked={ favorites.some((song) => song.trackId === music.trackId) }
+            />))}
+        </div>
       </div>
     );
   }
