@@ -1,3 +1,17 @@
 #main-music-album {
     margin-top: 11vh;
 }
+
+.heart-icon {
+    width: 30px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.favorite-checkbox {
+    display: none;
+}
+
+.loading {
+    margin-top: 11vh;
+}
