@@ -56,6 +56,7 @@ a {
 }
 
 li {
+    font-family: 'Barlow Condensed', sans-serif;
     list-style: none;
     font-weight: 600;
 }
