@@ -77,7 +77,8 @@ class Search extends React.Component {
                 { lastSearch }
               </p>
               <ul id="result-list">
-                {albuns.length === 0 ? <p>Nenhum álbum foi encontrado</p>
+                {albuns.length === 0 ? (
+                  <p id="not-result-phrase">Nenhum álbum foi encontrado</p>)
                   : albuns.map((album) => (
                     <Link
                       className="album-result"

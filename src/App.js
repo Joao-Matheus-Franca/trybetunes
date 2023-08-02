@@ -20,7 +20,10 @@ class App extends React.Component {
             <Header />
             <Search />
           </Route>
-          <Route path="/album/:id" component={ Album } />
+          <Route path="/album/:id">
+            <Header />
+            <Route path="/album/:id" component={ Album } />
+          </Route>
           <Route path="/favorites">
             <Header />
             <Favorites />

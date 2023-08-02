@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
@@ -61,26 +60,23 @@ class Album extends React.Component {
   render() {
     const { artist, album, musics, loading, favorites, getFavorites } = this.state;
     return (
-      <>
-        <Header />
-        {loading ? <Loading /> : (
-          <div id="main-music-album">
-            <h2>{album}</h2>
-            <h3>{artist}</h3>
-            {musics.map((music) => (
-              <MusicCard
-                key={ music.trackName }
-                trackName={ music.trackName }
-                previewUrl={ music.previewUrl }
-                trackId={ music.trackId }
-                onChange={ this.handleChange }
-                checked={ (getFavorites.length)
-                  ? (getFavorites.some((e) => e.trackId === music.trackId)
+      loading ? <Loading /> : (
+        <div id="main-music-album">
+          <h2>{album}</h2>
+          <h3>{artist}</h3>
+          {musics.map((music) => (
+            <MusicCard
+              key={ music.trackName }
+              trackName={ music.trackName }
+              previewUrl={ music.previewUrl }
+              trackId={ music.trackId }
+              onChange={ this.handleChange }
+              checked={ (getFavorites.length)
+                ? (getFavorites.some((e) => e.trackId === music.trackId)
                   || favorites.includes(music.trackId.toString()))
-                  : favorites.includes(music.trackId.toString()) }
-              />))}
-          </div>)}
-      </>
+                : favorites.includes(music.trackId.toString()) }
+            />))}
+        </div>)
     );
   }
 }

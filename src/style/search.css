@@ -48,6 +48,11 @@
     margin-left: 15px;
 }
 
+#not-result-phrase {
+    margin: 0px;
+    margin-left: 5px;
+}
+
 #result-list {
     margin: 0px;
     margin-left: 10px;
