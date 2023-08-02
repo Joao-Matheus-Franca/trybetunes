@@ -1,6 +1,6 @@
 #main-profile-edit {
     margin-top: 12vh;
-    width: 100vw;;
+    width: 100vw;
 }
 
 #title-profile-edit {
@@ -15,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    margin: 0%;
 }
 
 .edit-label {

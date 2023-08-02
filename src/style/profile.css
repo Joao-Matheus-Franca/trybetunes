@@ -1,6 +1,6 @@
 #main-profile {
     margin-top: 12vh;
-    width: 100vw;;
+    width: 100vw;
 }
 
 #title-profile {
@@ -13,7 +13,6 @@
 #profile-data-list {
     padding: 0%;
     margin: 0%;
-    margin-left: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
