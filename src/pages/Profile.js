@@ -23,21 +23,24 @@ class Profile extends React.Component {
   render() {
     const { loading, name, image, email, description } = this.state;
     return (
-      loading ? <Loading /> : (
-        <div id="main-profile">
-          <h2 id="title-profile">Perfil</h2>
-          <ul id="profile-data-list">
-            <li id="profile-name">{name}</li>
-            <img
-              id="profile-image"
-              alt={ name }
-              src={ image || 'https://www.svgrepo.com/show/436841/person-crop-square-fill.svg' }
-            />
-            <li>{email}</li>
-            <li>{description}</li>
-            <Link id="edit-profile-button" to="/profile/edit">Editar perfil</Link>
-          </ul>
-        </div>)
+      <div id="main-profile">
+        <h2 id="title-profile">Perfil</h2>
+        <div id="profile-infos">
+          {loading ? <Loading /> : (
+            <ul id="profile-data-list">
+              <li id="profile-name">{name}</li>
+              <img
+                id="profile-image"
+                alt={ name }
+                src={ image || 'https://www.svgrepo.com/show/436841/person-crop-square-fill.svg' }
+              />
+              <li>{email}</li>
+              <li>{description}</li>
+              <Link id="edit-profile-button" to="/profile/edit">Editar perfil</Link>
+            </ul>
+          )}
+        </div>
+      </div>
     );
   }
 }

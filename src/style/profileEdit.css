@@ -10,11 +10,19 @@
     height: 35px;
 }
 
+#profile-new-infos {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #edit-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     margin: 0%;
 }
 
@@ -26,7 +34,7 @@
 }
 
 .edit-input {
-    width: 98%;
+    width: 100%;
     align-self: center;
 }
 
