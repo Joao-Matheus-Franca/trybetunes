@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { getUser, updateUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../style/profileEdit.css';
 
 class ProfileEdit extends React.Component {
   state = {
@@ -53,48 +54,56 @@ class ProfileEdit extends React.Component {
     return (
       <Route path="/profile/edit">
         { loading ? <Loading /> : (
-          <div>
-            <h1>Profile Edit</h1>
-            <label htmlFor="name">
-              Nome:
-              <input
-                id="name"
-                value={ name }
-                onChange={ this.handleChange }
-                type="text"
-              />
-            </label>
-            <label htmlFor="email">
-              E-mail:
-              <input
-                id="email"
-                value={ email }
-                onChange={ this.handleChange }
-                type="text"
-              />
-            </label>
-            <label htmlFor="description">
-              Descrição:
-              <textarea
-                id="description"
-                onChange={ this.handleChange }
-                value={ description }
-              />
-            </label>
-            <label htmlFor="image">
-              <input
-                id="image"
-                value={ image }
-                onChange={ this.handleChange }
-              />
-            </label>
-            <button
-              type="button"
-              disabled={ btnDisabled }
-              onClick={ this.handleClick }
-            >
-              Salvar
-            </button>
+          <div id="main-profile-edit">
+            <h2 id="title-profile-edit">Editar perfil</h2>
+            <form id="edit-form">
+              <label className="edit-label" htmlFor="name">
+                Nome:
+                <input
+                  className="edit-input"
+                  id="name"
+                  value={ name }
+                  onChange={ this.handleChange }
+                  type="text"
+                />
+              </label>
+              <label className="edit-label" htmlFor="email">
+                E-mail:
+                <input
+                  className="edit-input"
+                  id="email"
+                  value={ email }
+                  onChange={ this.handleChange }
+                  type="text"
+                />
+              </label>
+              <label className="edit-label" htmlFor="description">
+                Descrição:
+                <textarea
+                  className="edit-input"
+                  id="description"
+                  onChange={ this.handleChange }
+                  value={ description }
+                />
+              </label>
+              <label className="edit-label" htmlFor="image">
+                Imagem de perfil:
+                <input
+                  className="edit-input"
+                  id="image"
+                  value={ image }
+                  onChange={ this.handleChange }
+                />
+              </label>
+              <button
+                id="save-profile-infos"
+                type="button"
+                disabled={ btnDisabled }
+                onClick={ this.handleClick }
+              >
+                Salvar
+              </button>
+            </form>
           </div>)}
         {redirect && <Redirect exact to="/profile" />}
       </Route>

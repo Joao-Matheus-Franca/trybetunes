@@ -1,38 +1,41 @@
-#main-profile {
+#main-profile-edit {
     margin-top: 12vh;
     width: 100vw;;
 }
 
-#title-profile {
+#title-profile-edit {
     margin: 10px;
     margin-left: 15px;
     padding-top: 2px;
     height: 35px;
 }
 
-#profile-data-list {
-    padding: 0%;
-    margin: 0%;
-    margin-left: 15px;
+#edit-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
 
-#profile-name {
-    font-size: 20px;
+.edit-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
 }
 
-#profile-image {
-    width: 100px;
-    border-radius: 5px;
+.edit-input {
+    width: 98%;
+    align-self: center;
 }
 
-#edit-profile-button {
+#save-profile-infos {
     font-size: 16px;
     color: white;
     background-color: rgb(20, 33, 61);
     border: 2px solid rgb(20, 33, 61);
     border-radius: 2px;
+    margin-top: 5px;
     font-weight: 500;
+    width: 90%;
 }
