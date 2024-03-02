@@ -1,0 +1,45 @@
+#main-profile {
+    margin-top: 12vh;
+    width: 100vw;
+}
+
+#title-profile {
+    margin: 10px;
+    margin-left: 15px;
+    padding-top: 2px;
+    height: 35px;
+}
+
+#profile-infos {
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-data-list {
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-name {
+    font-size: 20px;
+}
+
+#profile-image {
+    width: 100px;
+    border-radius: 5px;
+}
+
+#edit-profile-button {
+    font-size: 16px;
+    color: white;
+    background-color: rgb(20, 33, 61);
+    border: 2px solid rgb(20, 33, 61);
+    border-radius: 2px;
+    font-weight: 500;
+}

@@ -1,33 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from '../pages/Loading';
+import Loading from './Loading';
+import '../style/header.css';
 
 class Header extends React.Component {
   state = {
     user: '',
-    loading: false,
+    isLoading: true,
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
-    const name = await getUser();
-    this.setState({ user: name.name, loading: false });
+    const userData = await getUser();
+    this.setState({ user: userData.name, isLoading: false });
   }
 
   render() {
-    const { user, loading } = this.state;
+    const { user, isLoading } = this.state;
     return (
-      loading ? <Loading />
+      isLoading ? <Loading />
         : (
-          <header data-testid="header-component">
-            <h1>TybeTune</h1>
-            <nav>
-              <Link data-testid="link-to-search" to="/search">Search</Link>
-              <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
-              <Link data-testid="link-to-profile" to="/profile">Profile</Link>
+          <header id="header">
+            <div id="title-image-header">
+              <h1 id="title-header">TrybeTunes</h1>
+              <img
+                id="image-header"
+                src="https://www.svgrepo.com/show/486358/music.svg"
+                alt="Ícone da página"
+              />
+            </div>
+            <nav id="navbar-header">
+              <Link className="navbar-button-header" to="/search">Pesquisar</Link>
+              <Link className="navbar-button-header" to="/favorites">Favoritas</Link>
+              <Link className="navbar-button-header" to="/profile">Perfil</Link>
+              <p id="user-name-header">{ `Usuário: ${user}`}</p>
             </nav>
-            <p data-testid="header-user-name">{ user }</p>
           </header>)
     );
   }

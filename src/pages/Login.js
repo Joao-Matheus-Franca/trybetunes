@@ -1,60 +1,68 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import '../style/login.css';
 
 class Login extends React.Component {
   state = {
     name: '',
     btnDisabled: true,
-    loading: false,
+    isLoading: false,
     redirect: false,
-  };
-
-  handleChange = (event) => {
-    const { target: { value } } = event;
-    this.setState({ name: value }, () => this.activateBtn());
   };
 
   activateBtn = () => {
     const { name } = this.state;
-    const minLength = 3;
-    if (name.length >= minLength) {
+    const minNameSize = 3;
+    if (name.length >= minNameSize) {
       this.setState({ btnDisabled: false });
     } else {
       this.setState({ btnDisabled: true });
     }
   };
 
+  handleChange = ({ target: { value } }) => {
+    this.setState({ name: value }, () => this.activateBtn());
+  };
+
   handleClick = async () => {
     const { name } = this.state;
-    this.setState({ loading: true });
+    this.setState({ isLoading: true });
     await createUser({ name });
     this.setState({ redirect: true });
   };
 
   render() {
-    const { btnDisabled, loading, redirect } = this.state;
+    const { btnDisabled, isLoading, redirect } = this.state;
     return (
       <Route exact path="/">
-        {loading ? <Loading /> : (
-          <div data-testid="page-login">
-            <h1>Login</h1>
-            <label htmlFor="loginInput">
-              <input
-                data-testid="login-name-input"
-                type="text"
-                onChange={ this.handleChange }
-              />
-            </label>
-            <button
-              type="button"
-              data-testid="login-submit-button"
-              disabled={ btnDisabled }
-              onClick={ this.handleClick }
-            >
-              Entrar
-            </button>
+        {isLoading ? <Loading /> : (
+          <div id="page-login">
+            <img
+              id="image-login"
+              src="https://www.svgrepo.com/show/486358/music.svg"
+              alt="Ícone da página"
+            />
+            <h1 id="title-login">TrybeTunes</h1>
+            <form id="form-login">
+              <label htmlFor="name-login-input">
+                <input
+                  id="name-login-input"
+                  type="text"
+                  placeholder="Nome de usuário"
+                  onChange={ this.handleChange }
+                />
+              </label>
+              <button
+                id="button-login"
+                type="button"
+                disabled={ btnDisabled }
+                onClick={ this.handleClick }
+              >
+                Entrar
+              </button>
+            </form>
           </div>
         )}
         {redirect && <Redirect to="/search" />}
